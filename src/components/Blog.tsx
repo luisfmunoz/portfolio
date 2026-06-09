@@ -2,25 +2,25 @@ import { motion } from 'framer-motion';
 
 const BLOG_POSTS = [
   {
-    title: "The Reality of Zero-Trust Security in Legacy Networks",
-    date: "Oct 15, 2023",
-    readTime: "8 min read",
+    title: "Why Conditional Access is the New Perimeter for Microsoft 365",
+    date: "Mar 10, 2025",
+    readTime: "6 min read",
     tag: "Security",
     tagColor: "bg-[#7f1d1d] text-white"
   },
   {
-    title: "Infrastructure as Code: Moving Past the Hype",
-    date: "Aug 02, 2023",
-    readTime: "5 min read",
-    tag: "DevOps",
-    tagColor: "bg-[#065f46] text-white"
+    title: "Migrating to SharePoint: Lessons from a 20-Year Records Project",
+    date: "Jan 22, 2025",
+    readTime: "8 min read",
+    tag: "Modern Workplace",
+    tagColor: "bg-[#0369a1] text-white"
   },
   {
-    title: "Why Cloud Repatriation is Becoming a Boardroom Discussion",
-    date: "Jun 20, 2023",
-    readTime: "6 min read",
-    tag: "Cloud",
-    tagColor: "bg-[#0369a1] text-white"
+    title: "Zero-Touch Deployment with Intune and Windows Autopilot",
+    date: "Nov 05, 2024",
+    readTime: "5 min read",
+    tag: "Endpoint",
+    tagColor: "bg-[#312e81] text-white"
   }
 ];
 

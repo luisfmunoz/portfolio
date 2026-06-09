@@ -2,68 +2,68 @@ import { motion } from 'framer-motion';
 
 const SKILLS = [
   {
+    category: "Microsoft 365 & Modern Workplace",
+    color: "bg-[#0369a1]",
+    barColor: "bg-[#0369a1]",
+    trackColor: "bg-sky-100 dark:bg-sky-950",
+    proficiency: 97,
+    items: [
+      { name: "Teams & SharePoint", level: 98 },
+      { name: "OneDrive & Exchange", level: 97 },
+      { name: "Entra ID (Azure AD)", level: 96 },
+      { name: "Microsoft 365 Administration", level: 98 },
+    ]
+  },
+  {
+    category: "Identity & Security",
+    color: "bg-[#7f1d1d]",
+    barColor: "bg-[#7f1d1d]",
+    trackColor: "bg-red-100 dark:bg-red-950",
+    proficiency: 94,
+    items: [
+      { name: "MFA & Conditional Access", level: 95 },
+      { name: "Microsoft Defender for Endpoint", level: 93 },
+      { name: "Identity & Access Management", level: 94 },
+      { name: "Governance & Compliance", level: 91 },
+    ]
+  },
+  {
+    category: "Endpoint Management",
+    color: "bg-[#312e81]",
+    barColor: "bg-[#312e81]",
+    trackColor: "bg-indigo-100 dark:bg-indigo-950",
+    proficiency: 93,
+    items: [
+      { name: "Microsoft Intune", level: 94 },
+      { name: "Windows Autopilot", level: 93 },
+      { name: "Windows Endpoint Management", level: 95 },
+      { name: "Asset Lifecycle Management", level: 92 },
+    ]
+  },
+  {
     category: "Infrastructure",
     color: "bg-[#1e3a5f]",
     barColor: "bg-[#1e3a5f]",
     trackColor: "bg-blue-100 dark:bg-blue-950",
-    proficiency: 98,
-    items: [
-      { name: "Windows Server & Active Directory", level: 98 },
-      { name: "Linux (RHEL, Ubuntu)", level: 95 },
-      { name: "VMware vSphere / Hyper-V", level: 92 },
-      { name: "Storage & Backup Systems", level: 90 },
-    ]
-  },
-  {
-    category: "Networking",
-    color: "bg-[#312e81]",
-    barColor: "bg-[#312e81]",
-    trackColor: "bg-indigo-100 dark:bg-indigo-950",
     proficiency: 96,
     items: [
-      { name: "Cisco Routing & Switching", level: 97 },
-      { name: "BGP / OSPF", level: 94 },
-      { name: "Firewalls (Palo Alto, Fortinet)", level: 93 },
-      { name: "VPNs & Load Balancing", level: 91 },
+      { name: "Windows Server (AD/DNS/DHCP)", level: 97 },
+      { name: "Hyper-V Virtualization", level: 94 },
+      { name: "Backup & Disaster Recovery", level: 96 },
+      { name: "Network Administration", level: 95 },
     ]
   },
   {
-    category: "Security",
-    color: "bg-[#7f1d1d]",
-    barColor: "bg-[#7f1d1d]",
-    trackColor: "bg-red-100 dark:bg-red-950",
-    proficiency: 93,
-    items: [
-      { name: "Zero Trust Architecture", level: 93 },
-      { name: "Endpoint Protection", level: 95 },
-      { name: "SIEM / SOC Operations", level: 88 },
-      { name: "Identity & Access Management", level: 92 },
-    ]
-  },
-  {
-    category: "Cloud & DevOps",
-    color: "bg-[#0369a1]",
-    barColor: "bg-[#0369a1]",
-    trackColor: "bg-sky-100 dark:bg-sky-950",
-    proficiency: 89,
-    items: [
-      { name: "AWS & Azure", level: 90 },
-      { name: "Terraform / IaC", level: 87 },
-      { name: "Docker & Kubernetes", level: 85 },
-      { name: "CI/CD Pipelines", level: 88 },
-    ]
-  },
-  {
-    category: "Leadership",
+    category: "Leadership & Operations",
     color: "bg-[#065f46]",
     barColor: "bg-[#065f46]",
     trackColor: "bg-emerald-100 dark:bg-emerald-950",
     proficiency: 97,
     items: [
-      { name: "IT Strategy & Roadmapping", level: 98 },
-      { name: "Vendor & Budget Management", level: 96 },
-      { name: "Team Mentorship", level: 97 },
-      { name: "Agile & ITIL Frameworks", level: 94 },
+      { name: "IT Budgeting & Vendor Management", level: 96 },
+      { name: "Service Desk / ITSM", level: 98 },
+      { name: "Project & Change Management", level: 95 },
+      { name: "IT Roadmap & Strategy", level: 97 },
     ]
   }
 ];
@@ -120,7 +120,7 @@ export default function Skills() {
               className={`rounded-[24px] overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 border border-card-border ${idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''}`}
             >
               <div className={`${skillGroup.color} px-8 py-5 flex items-center justify-between`}>
-                <h3 className="text-xl font-serif text-white">{skillGroup.category}</h3>
+                <h3 className="text-lg font-serif text-white">{skillGroup.category}</h3>
                 <div className="flex items-center gap-2">
                   <div className="w-16 h-1.5 rounded-full bg-white/20 overflow-hidden">
                     <motion.div

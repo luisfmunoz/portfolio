@@ -2,28 +2,28 @@ import { motion } from 'framer-motion';
 
 const PROJECTS = [
   {
-    name: "Global Cloud Migration",
-    description: "Architected and led the migration of 500+ legacy VMs to AWS and Azure, employing a hybrid-cloud strategy that minimized downtime and enhanced disaster recovery capabilities.",
-    tags: ["AWS", "Azure", "Terraform", "VMware"],
-    metric: "40% Cost Reduction",
+    name: "SharePoint Document Migration",
+    description: "Migrated 20+ years of records from CCH Axcess to SharePoint for 350 staff at Cain Watters and Associates, reducing RDP dependency and transforming document access and collaboration.",
+    tags: ["SharePoint", "Microsoft 365", "Entra ID", "Change Management"],
+    metric: "2,500+ Efficiency Hrs/yr",
     accentBg: "bg-[#0369a1]",
     tagColor: "bg-sky-100 text-sky-900 dark:bg-sky-900 dark:text-sky-100"
   },
   {
-    name: "Zero Trust Security Implementation",
-    description: "Re-engineered the enterprise security posture from perimeter-based to zero-trust. Deployed advanced IAM, MFA, and continuous monitoring across all endpoints globally.",
-    tags: ["Okta", "CrowdStrike", "Palo Alto"],
-    metric: "Zero Breaches in 3 Yrs",
-    accentBg: "bg-[#7f1d1d]",
-    tagColor: "bg-red-100 text-red-900 dark:bg-red-900 dark:text-red-100"
-  },
-  {
-    name: "Automated Provisioning Pipeline",
-    description: "Developed a comprehensive CI/CD pipeline for infrastructure using infrastructure-as-code principles, allowing the DevOps team to deploy environments in minutes instead of days.",
-    tags: ["Ansible", "Jenkins", "Docker"],
-    metric: "95% Faster Deployments",
+    name: "Unified Communications Rollout",
+    description: "Led the migration of 350 users from legacy telephony to RingCentral + Microsoft Teams, delivering a fully integrated unified communications platform with minimal disruption.",
+    tags: ["Teams", "RingCentral", "Project Management", "Training"],
+    metric: "1,000+ Efficiency Hrs/yr",
     accentBg: "bg-[#065f46]",
     tagColor: "bg-emerald-100 text-emerald-900 dark:bg-emerald-900 dark:text-emerald-100"
+  },
+  {
+    name: "Modern Endpoint Management",
+    description: "Standardized Windows endpoints enterprise-wide using Microsoft Intune and Autopilot. Enforced Conditional Access policies and deployed Defender for Endpoint across all devices.",
+    tags: ["Intune", "Autopilot", "Defender", "Conditional Access"],
+    metric: "Zero-Touch Provisioning",
+    accentBg: "bg-[#312e81]",
+    tagColor: "bg-indigo-100 text-indigo-900 dark:bg-indigo-900 dark:text-indigo-100"
   }
 ];
 

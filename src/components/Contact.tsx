@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -20,29 +20,38 @@ type FormValues = z.infer<typeof formSchema>;
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: ""
-    }
+    defaultValues: { name: "", email: "", subject: "", message: "" }
   });
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
-    // Simulate network request
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    form.reset();
-    
-    // Reset success state after 5 seconds
-    setTimeout(() => {
-      setIsSuccess(false);
-    }, 5000);
+    setErrorMsg(null);
+
+    try {
+      const res = await fetch(`${import.meta.env.BASE_URL}api/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const json = await res.json() as { success?: boolean; error?: string };
+
+      if (!res.ok || !json.success) {
+        throw new Error(json.error ?? "Something went wrong. Please try again.");
+      }
+
+      setIsSuccess(true);
+      form.reset();
+      setTimeout(() => setIsSuccess(false), 5000);
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : "Failed to send message.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -57,7 +66,7 @@ export default function Contact() {
           <div className="text-center mb-10">
             <h2 className="text-4xl font-serif text-primary mb-4">Get in Touch</h2>
             <p className="text-muted-foreground max-w-lg mx-auto">
-              Open to executive roles, consulting engagements, or discussing the future of enterprise IT.
+              Open to new roles, consulting engagements, or just a conversation about enterprise IT.
             </p>
           </div>
 
@@ -71,7 +80,7 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel>Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" className="bg-background rounded-xl h-12" {...field} />
+                        <Input placeholder="Jane Smith" className="bg-background rounded-xl h-12" data-testid="input-name" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -84,14 +93,14 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input placeholder="john@example.com" type="email" className="bg-background rounded-xl h-12" {...field} />
+                        <Input placeholder="jane@company.com" type="email" className="bg-background rounded-xl h-12" data-testid="input-email" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
               </div>
-              
+
               <FormField
                 control={form.control}
                 name="subject"
@@ -99,7 +108,7 @@ export default function Contact() {
                   <FormItem>
                     <FormLabel>Subject</FormLabel>
                     <FormControl>
-                      <Input placeholder="Consulting Inquiry" className="bg-background rounded-xl h-12" {...field} />
+                      <Input placeholder="IT Director Role — Acme Corp" className="bg-background rounded-xl h-12" data-testid="input-subject" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -113,10 +122,11 @@ export default function Contact() {
                   <FormItem>
                     <FormLabel>Message</FormLabel>
                     <FormControl>
-                      <Textarea 
-                        placeholder="How can we work together?" 
-                        className="bg-background rounded-xl min-h-[150px] resize-y" 
-                        {...field} 
+                      <Textarea
+                        placeholder="Tell me about the opportunity or how I can help..."
+                        className="bg-background rounded-xl min-h-[150px] resize-y"
+                        data-testid="input-message"
+                        {...field}
                       />
                     </FormControl>
                     <FormMessage />
@@ -124,11 +134,16 @@ export default function Contact() {
                 )}
               />
 
-              <Button 
-                type="submit" 
-                size="lg" 
+              {errorMsg && (
+                <p className="text-sm text-destructive font-medium">{errorMsg}</p>
+              )}
+
+              <Button
+                type="submit"
+                size="lg"
                 className="w-full md:w-auto rounded-full px-10 h-12 font-medium"
                 disabled={isSubmitting || isSuccess}
+                data-testid="button-submit"
               >
                 {isSubmitting ? (
                   <span className="flex items-center gap-2">
@@ -138,7 +153,7 @@ export default function Contact() {
                 ) : isSuccess ? (
                   <span className="flex items-center gap-2">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Message Sent
+                    Message Sent!
                   </span>
                 ) : (
                   "Send Message"

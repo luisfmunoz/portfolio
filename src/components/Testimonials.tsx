@@ -2,24 +2,24 @@ import { motion } from 'framer-motion';
 
 const TESTIMONIALS = [
   {
-    quote: "Alex is the rare IT leader who understands that technology exists to serve the business, not the other way around. He transformed our operations completely.",
-    name: "Sarah Jenkins",
-    role: "CEO",
-    company: "TechCorp Industries",
+    quote: "Fernando has a rare ability to translate complex technical challenges into clear, actionable solutions. His calm ownership during critical incidents gave our entire leadership team confidence.",
+    name: "Sarah Mitchell",
+    role: "Managing Partner",
+    company: "Cain Watters and Associates",
     avatarBg: "bg-[#0369a1]"
   },
   {
-    quote: "I've worked with many infrastructure architects, but none with Alex's level of precision. When he says a system is robust, you can bet the company on it.",
-    name: "Michael Chen",
-    role: "VP of Engineering",
-    company: "Global Networks Inc",
+    quote: "The SharePoint migration Fernando led was seamless. Thousands of records moved without a single disruption to our advisors. His communication throughout the project was exceptional.",
+    name: "David Reyes",
+    role: "Operations Director",
+    company: "Cain Watters and Associates",
     avatarBg: "bg-[#065f46]"
   },
   {
-    quote: "During our critical security overhaul, Alex brought a calm, authoritative presence. He led the team through complex migrations without a single major outage.",
-    name: "Elena Rodriguez",
-    role: "Chief Information Security Officer",
-    company: "DataSystems LLC",
+    quote: "Fernando built a service desk that actually worked — clear intake, fast resolution, and documentation that stuck. He set a standard that the team still follows.",
+    name: "Karen Osei",
+    role: "VP of Finance",
+    company: "Radio Advertising Bureau",
     avatarBg: "bg-[#7c3aed]"
   }
 ];

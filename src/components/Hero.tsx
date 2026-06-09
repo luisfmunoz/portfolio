@@ -22,12 +22,12 @@ export default function Hero() {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-serif text-white tracking-tight leading-tight">
-            Alex Morgan
+            Fernando Muñoz
           </h1>
 
           <p className="text-xl md:text-2xl text-slate-300 max-w-2xl font-light">
-            Senior IT Director & Infrastructure Architect.<br className="hidden md:block" />
-            Building resilient systems and leading high-performance teams for over 25 years.
+            Infrastructure & Modern Workplace Leader.<br className="hidden md:block" />
+            25+ years simplifying technology, improving security, and delivering reliable operations.
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
@@ -51,7 +51,7 @@ export default function Hero() {
         </div>
 
         <div className="hidden md:flex w-48 h-48 lg:w-64 lg:h-64 rounded-full flex-shrink-0 bg-[#1a3054] border-4 border-white/10 shadow-lg items-center justify-center text-white/20 text-6xl font-serif">
-          AM
+          FM
         </div>
       </motion.div>
     </section>

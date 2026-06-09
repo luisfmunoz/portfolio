@@ -13,7 +13,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bento-card p-8 md:col-span-2 flex flex-col justify-center">
             <p className="text-lg text-foreground/80 leading-relaxed">
-              I am a technology leader obsessed with precision and reliability. Over the last two decades, I have designed networks for global enterprises, modernized legacy infrastructure, and mentored technical teams to operate at their absolute best. I believe that good IT is invisible, robust, and fundamentally aligned with business objectives.
+              Operations-minded infrastructure & Modern Workplace leader with 25+ years across financial services, small business, and non-profit IT. Based in the DFW area, I am known for calm ownership, clear communication, and simplifying technology while improving security, reliability, and service performance. I translate complex technical challenges into practical solutions that align with business objectives.
             </p>
           </div>
 
@@ -23,8 +23,8 @@ export default function About() {
               <span className="text-sm font-medium text-blue-200 uppercase tracking-wider">Years Experience</span>
             </div>
             <div className="rounded-[24px] p-6 flex flex-col items-center justify-center text-center shadow-sm bg-[#065f46]">
-              <span className="text-4xl font-serif text-white mb-2">50+</span>
-              <span className="text-sm font-medium text-emerald-200 uppercase tracking-wider">Major Projects</span>
+              <span className="text-4xl font-serif text-white mb-2">350+</span>
+              <span className="text-sm font-medium text-emerald-200 uppercase tracking-wider">Users Supported</span>
             </div>
           </div>
         </div>
