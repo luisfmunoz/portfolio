@@ -27,7 +27,7 @@ if (!basePath) {
 }
 
 export default defineConfig({
-  base: basePath,
+  base: '/portfolio/',
   plugins: [
     react(),
     tailwindcss(),
